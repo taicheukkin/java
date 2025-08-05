@@ -30,9 +30,10 @@ The tutorial guides through creating a new Java project in IntelliJ IDEA:
 The **Main.java** file starts with a package declaration, followed by the class definition and the main method. The main method is `public static void main(String[] args)` and accepts a parameter array of strings. Comments, indicated by `//`, explain the code but do not execute.
 
 ### Writing the First Java Program
-The tutorial demonstrates printing "Hello World" to the terminal using:
-```java
+The tutorial demonstrates printing "Hello World" to the terminal using java:
+
 System.out.println("Hello World");
+
 - **System** is a class in the `java.lang` package.
 - **out** is a static field of type **PrintStream**.
 - **println** is a method that prints text followed by a new line. Textual data in Java is represented as strings, enclosed in **double quotes**.
