@@ -71,7 +71,7 @@
     }
     ```
 
-  - **Do While Loop**: Executes at least once.
+  - **Do While Loop**: Executes at least once even the condition is false.
     ```java
     int i = 0;
     do {
