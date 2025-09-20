@@ -44,27 +44,32 @@
 2. **Hierarchy**: The hierarchy allows us to define components like `CheckBox` and `DropDown` similarly, each inheriting from `UIControl`.
 
 
-## The Object Class in Java
-1. **Inheritance**: In Java, every class inherits from the `Object` class, which provides fundamental methods.
-   - **Example**: If we create a `TextBox` class:
+# Understanding the Object Class in Java
+
+## Inheritance from the Object Class
+- **Basic Concept**: When we create a class, it implicitly extends the `Object` class unless specified otherwise. This means all classes inherit methods from `Object`, such as `toString()`, `equals()`, and `hashCode()`.
+  
+- **Example**: Consider the `TextBox` class:
+  ```java
+  public class TextBox extends UIControl {
+      // Additional properties and methods specific to TextBox
+  }
+  ```
+  Here, `TextBox` inherits from `UIControl`, which in turn inherits from `Object`.
+
+## Members of the Object Class
+### Common Methods
+1. **getClass()**: Returns the runtime class of this object.
+   - **Usage**:
      ```java
-     public class TextBox extends UIControl {
-         private String content;
-
-         public TextBox(String content) {
-             this.content = content;
-         }
-
-         @Override
-         public String toString() {
-             return "TextBox with content: " + this.content;
-         }
-     }
+     TextBox textBox = new TextBox();
+     Class<?> clazz = textBox.getClass();
+     System.out.println("Class: " + clazz.getName());
      ```
-   - The `TextBox` inherits methods like `toString()` and `equals()` from `Object`, allowing for custom implementations.
 
-2. **Overriding Methods**: We can override methods inherited from the `Object` class to provide specific functionality.
-   - **Example**: Overriding `equals()` in the `TextBox` class to compare content:
+2. **equals(Object obj)**: Determines whether the specified object is equal to this object.
+   - **Default Implementation**: The default implementation compares references, not values.
+   - **Overriding Example**:
      ```java
      @Override
      public boolean equals(Object obj) {
@@ -74,6 +79,95 @@
          return this.content.equals(other.content);
      }
      ```
+
+3. **hashCode()**: Returns a hash code value for the object.
+   - **Usage**: Used in hash-based collections like `HashMap`.
+   - **Example**:
+     ```java
+     @Override
+     public int hashCode() {
+         return Objects.hash(content); // Generates a hash based on the content
+     }
+     ```
+
+4. **toString()**: Returns a string representation of the object.
+   - **Overriding Example**:
+     ```java
+     @Override
+     public String toString() {
+         return "TextBox with content: " + this.content;
+     }
+     ```
+
+### Additional Methods
+- **notify() and wait()**: Used in multithreading for communication between threads.
+  - **Note**: These methods are more advanced topics that we can explore later.
+
+
+# Understanding Constructors in Java with Inheritance
+
+## Introduction to Constructors
+Constructors are special methods used to initialize objects when an instance of a class is created. They have the same name as the class and do not have a return type. I
+
+
+## Using Constructors with Inheritance
+When creating a class hierarchy, constructors play a crucial role in initializing the base class (superclass) before initializing the derived class (subclass).
+
+### Example: UI Control Class
+Let's create a framework for building graphical user interfaces (GUIs) where various UI components can inherit common behaviors from a base class.
+
+1. **Defining the Base Class (`UIControl`)**:
+   ```java
+   public class UIControl {
+       private boolean isEnabled;
+
+       public UIControl(boolean isEnabled) {
+           this.isEnabled = isEnabled; // Initialize the isEnabled field
+       }
+
+       public void enable() {
+           isEnabled = true;
+       }
+
+       public void disable() {
+           isEnabled = false;
+       }
+
+       public boolean isEnabled() {
+           return isEnabled;
+       }
+   }
+   ```
+
+2. **Creating a TextBox Class**:
+   When we create a `TextBox` class that extends `UIControl`, we need to ensure that we properly call the constructor of `UIControl`.
+   ```java
+   public class TextBox extends UIControl {
+       private String content;
+
+       // Constructor for TextBox that also initializes the superclass
+       public TextBox(String content, boolean isEnabled) {
+           super(isEnabled); // Call the constructor of UIControl
+           this.content = content;
+       }
+
+       @Override
+       public String toString() {
+           return "TextBox: " + content + " (Enabled: " + isEnabled() + ")";
+       }
+   }
+   ```
+
+### Compilation Error Example
+If the `UIControl` class had a default constructor that required a parameter, we would need to explicitly call that constructor in the `TextBox` constructor. If we forget to do this, we will encounter a compilation error.
+
+
+
+
+
+
+
+
 
 ## Access Modifiers
 1. **Public and Private**:
