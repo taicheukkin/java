@@ -39,8 +39,3 @@ You are encouraged to treat this as an opportunity to practice the concepts lear
 - Spend 20-30 minutes refactoring the code.
 - Extract necessary classes and come back to compare your solution with the provided approach.
 
-## Conclusion
-Refactoring the mortgage calculator toward an object-oriented design will enhance code maintainability and readability. This exercise is crucial for mastering object-oriented programming concepts.
-```
-
-This summary outlines the key elements of the mortgage calculator project, highlights the need for refactoring, and encourages hands-on practice.
