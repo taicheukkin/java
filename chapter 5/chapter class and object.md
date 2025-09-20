@@ -95,7 +95,7 @@
 Here's a comprehensive summary in Markdown format, incorporating vivid examples and covering the principles of object-oriented programming, encapsulation, and abstraction:
 
 
-# Summary of Object-Oriented Programming Concepts2
+# Summary of Object-Oriented Programming Concepts
 
 ## Part 1: The Benefits of Object-Oriented Programming
 1. **Introduction to OOP**: The course emphasizes the benefits of object-oriented programming (OOP) over procedural programming. OOP enhances code organization and reusability.
@@ -172,10 +172,8 @@ Here's a comprehensive summary in Markdown format, incorporating vivid examples 
 4. **Example of Abstraction**: If the internal representation of an employee's wage changes (e.g., switching from integers to an array), only the `Employee` class needs updating, not every class that uses it.
 
 
-Here’s a comprehensive summary in Markdown format, incorporating vivid examples and covering the concepts of coupling, encapsulation, abstraction, method overloading, and static fields in object-oriented programming:
 
-```markdown
-# Summary of Object-Oriented Programming Concepts
+# Summary of Object-Oriented Programming Concepts2
 
 ## Part 1: Coupling
 1. **Understanding Coupling**: Coupling refers to how much a class depends on or is connected to another class. It’s important to manage coupling to avoid tightly interlinked classes that complicate changes.
