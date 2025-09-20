@@ -155,14 +155,14 @@ Here's a comprehensive summary in Markdown format, incorporating vivid examples 
 2. **Implementation in Code**: In the `Employee` class, fields are made private to hide implementation details. Instead of allowing direct access to fields, methods like setters and getters are provided.
 
    ```java
-   public void setHourlyRate(int hourlyRate) {
+   private void setHourlyRate(int hourlyRate) {
        if (hourlyRate <= 0) {
            throw new IllegalArgumentException("Hourly rate must be positive");
        }
        this.hourlyRate = hourlyRate;
    }
 
-   public int getHourlyRate() {
+   private int getHourlyRate() {
        return hourlyRate;
    }
    ```
